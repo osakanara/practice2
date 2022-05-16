@@ -6,6 +6,11 @@ export const App = () => {
     "TODOする１",
     "TODOする２"
   ]);
+  const [completeTodos, setCompleteTodos] = useState([
+    "TODO済み１",
+    "TODO済み2"
+  ]);
+
   return (
     <>
       <div className="input-area">
@@ -29,10 +34,14 @@ export const App = () => {
       <div className="complete-area">
         <p className="title">完了リスト</p>
         <ul>
-          <div className="list-row">
-            <li> TODO済み</li>
-            <button>戻す</button>
-          </div>
+          {completeTodos.map((todo) => {
+            return (
+              <div className="list-row">
+                <li>{todo}</li>
+                <button>戻す</button>
+              </div>
+            );
+          })}
         </ul>
       </div>
     </>
