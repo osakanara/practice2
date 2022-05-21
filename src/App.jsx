@@ -20,14 +20,13 @@ export const App = () => {
   };
 
   const onClickComplete = (index) => {
-    const currentIncompleteTodos = [...incompleteTodos];
-    const completeTodoText = currentIncompleteTodos[index];
+    const newIncompleteTodos = [...incompleteTodos];
     // 完了リストに要素を追加
-    const newCompleteTodos = [...completeTodos, completeTodoText];
+    const newCompleteTodos = [...completeTodos, incompleteTodos[index]];
     setCompleteTodos(newCompleteTodos);
     // 未完了リストから要素を削除
-    currentIncompleteTodos.splice(index, 1);
-    setIncompleteTodos(currentIncompleteTodos);
+    newIncompleteTodos.splice(index, 1);
+    setIncompleteTodos(newIncompleteTodos);
   };
 
   const [incompleteTodos, setIncompleteTodos] = useState([
