@@ -39,14 +39,8 @@ export const App = () => {
     setIncompleteTodos(newIncompleteTodos);
   };
 
-  const [incompleteTodos, setIncompleteTodos] = useState([
-    "TODOする１",
-    "TODOする２"
-  ]);
-  const [completeTodos, setCompleteTodos] = useState([
-    "TODO済み１",
-    "TODO済み2"
-  ]);
+  const [incompleteTodos, setIncompleteTodos] = useState([]);
+  const [completeTodos, setCompleteTodos] = useState([]);
 
   return (
     <>
